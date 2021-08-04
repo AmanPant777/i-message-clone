@@ -6,7 +6,7 @@ const Message = () => {
         <div className="message">
             <Avatar />
             <p>This is a message</p>
-            <small>timestamp</small>
+            <small>times</small>
         </div>
     )
 }
