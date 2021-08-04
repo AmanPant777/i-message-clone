@@ -2,13 +2,18 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  flex: 0.65;
+  flex: 1;
   background-color: white;
   justify-content: space-between;
+  /* width: 1000px;
+  max-width: 1000px; */
+  position: fixed;
+  right: 0;
+  left: 300px;
 }
 .chat_header {
   display: flex;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(128, 109, 109);
   padding: 20px;
   justify-content: space-between;
 }
@@ -35,4 +40,15 @@
   border: 1px solid lightgray;
   border-radius: 999px;
   padding: 5px;
+}
+.chat_message {
+  flex: 1;
+  overflow: scroll;
+}
+.chat_message::-webkit-scrollbar {
+  display: none;
+}
+.chat_message {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

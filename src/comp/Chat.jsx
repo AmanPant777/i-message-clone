@@ -54,11 +54,15 @@ const Chat = () => {
                 <h4>To : <span id='chat_name'>{ChatName}</span></h4>
                 <strong>Details</strong>
             </div>
-            <div className="chat_message">
-                {messages.map((data, key) => <Message key={key} content={data} />
 
+            <div className="chat_message">
+
+                {messages.map((data, key) => {
+                    return (<Message key={key} content={data} />)
+                }
                 )}
             </div>
+
             <div className="chat_input">
                 <form >
                     <input type="text" placeholder='i-message' value={input} onChange={handleChange} />
