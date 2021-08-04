@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './Chat.css'
 import MicNoneIcon from '@material-ui/icons/MicNone';
 import IconButton from '@material-ui/core/IconButton'
+import Message from './Message'
+import { selectChat } from '../redux/Slice/chatSlice'
+import { useSelector } from 'react-redux';
 const Chat = () => {
     const [input, setInput] = useState('')
     const handleChange = (e) => {
@@ -13,14 +16,15 @@ const Chat = () => {
         e.preventDefault()
         setInput('')
     }
+    const ChatName = useSelector(selectChat)
     return (
         <div className="chat">
             <div className="chat_header">
-                <h4>To : <span id='chat_name'>Channel Name</span></h4>
+                <h4>To : <span id='chat_name'>{ChatName}</span></h4>
                 <strong>Details</strong>
             </div>
             <div className="chat_message">
-                <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem architecto tempore omnis ducimus vel repellat distinctio voluptate nesciunt provident, atque ab ullam dignissimos dolor neque maxime nostrum expedita, suscipit perferendis?</h3>
+                <Message />
             </div>
             <div className="chat_input">
                 <form >
@@ -31,7 +35,8 @@ const Chat = () => {
                     <MicNoneIcon />
                 </IconButton>
             </div>
-        </div>
+        </div >
+
     )
 }
 
